@@ -6,8 +6,8 @@ namespace api;
 
 public class GeneralModel
 {
-    [Key, Column("id")]
-    public Guid Id { get; set; }
+    [Key, Column("guid")]
+    public Guid Guid { get; set; }
 
     [Required, Column("created_date")]
     public DateTime CreatedDate { get; set; }
