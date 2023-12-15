@@ -1,4 +1,5 @@
 ﻿using api.Models;
+using api.Utilities.Sample;
 using Microsoft.EntityFrameworkCore;
 
 namespace api.Database;
@@ -75,5 +76,55 @@ public class HumanResourcesDbContext : DbContext
             .WithOne(jh => jh.Job)
             .HasForeignKey(jh => jh.JobGuid)
             .OnDelete(DeleteBehavior.NoAction);
+
+        // Sample Data
+        // Department sample data
+        modelBuilder.Entity<Department>().HasData(
+            DepartmentSample.Finance(),
+            DepartmentSample.InformationTechnology(),
+            DepartmentSample.HumanResources()
+        );
+
+        // Job sample data
+        modelBuilder.Entity<Job>().HasData(
+            JobSample.FinancialAnalyst(),
+            JobSample.SoftwareDeveloper(),
+            JobSample.RecruitmentSpecialist()
+        );
+
+        // Role sample data
+        modelBuilder.Entity<Role>().HasData(
+            RoleSample.Staff(),
+            RoleSample.Manager(),
+            RoleSample.Admin()
+        );
+
+        // Employee sample data
+        modelBuilder.Entity<Employee>().HasData(
+            EmployeeSample.JohnDoe(),
+            EmployeeSample.JaneSmith(),
+            EmployeeSample.BobJohnson()
+        );
+
+        // Account sample data
+        modelBuilder.Entity<Account>().HasData(
+            AccountSample.JohnDoe(),
+            AccountSample.JaneSmith(),
+            AccountSample.BobJohnson()
+        );
+
+        // Account role sample data
+        modelBuilder.Entity<AccountRole>().HasData(
+            AccountRoleSample.JohnDoe(),
+            AccountRoleSample.JaneSmith(),
+            AccountRoleSample.BobJohnson()
+        );
+
+        // Job history sample data
+        modelBuilder.Entity<JobHistory>().HasData(
+            JobHistorySample.JohnDoe(),
+            JobHistorySample.JaneSmith(),
+            JobHistorySample.BobJohnson()
+        );
     }
 }
