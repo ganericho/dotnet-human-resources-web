@@ -1,9 +1,9 @@
 ﻿using api.Models;
-using api.Utilities;
+using api.Utilities.Handlers;
 
 namespace api.Contracts;
 
 public interface IAccountRoleRepository : IGeneralRepository<AccountRole>
 {
-    public RepositoryResult<IEnumerable<AccountRole>> GetByAccountGuid(Guid accountGuid);
+    public RepositoryHandler<IEnumerable<AccountRole>> GetByAccountGuid(Guid accountGuid);
 }

@@ -1,10 +1,10 @@
 ﻿using api.Models;
-using api.Utilities;
+using api.Utilities.Handlers;
 
 namespace api.Contracts;
 
 public interface IJobRepository : IGeneralRepository<Job>
 {
-    public RepositoryResult<Job> GetByName(string name);
-    public RepositoryResult<Job> GetByCode(int code);
+    public RepositoryHandler<Job> GetByName(string name);
+    public RepositoryHandler<Job> GetByCode(int code);
 }

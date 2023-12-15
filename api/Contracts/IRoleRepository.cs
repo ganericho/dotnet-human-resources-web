@@ -1,9 +1,9 @@
 ﻿using api.Models;
-using api.Utilities;
+using api.Utilities.Handlers;
 
 namespace api.Contracts;
 
 public interface IRoleRepository : IGeneralRepository<Role>
 {
-    public RepositoryResult<Role> GetByName(string name);
+    public RepositoryHandler<Role> GetByName(string name);
 }

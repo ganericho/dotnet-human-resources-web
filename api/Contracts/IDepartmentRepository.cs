@@ -1,10 +1,10 @@
 ﻿using api.Models;
-using api.Utilities;
+using api.Utilities.Handlers;
 
 namespace api.Contracts;
 
 public interface IDepartmentRepository : IGeneralRepository<Department>
 {
-    public RepositoryResult<Department> GetByName(string name);
-    public RepositoryResult<Department> GetByCode(int code);
+    public RepositoryHandler<Department> GetByName(string name);
+    public RepositoryHandler<Department> GetByCode(int code);
 }

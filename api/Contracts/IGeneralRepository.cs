@@ -1,12 +1,12 @@
-﻿using api.Utilities;
+﻿using api.Utilities.Handlers;
 
 namespace api.Contracts;
 
 public interface IGeneralRepository<T>
 {
-    RepositoryResult<T> GetByGuid(Guid guid);
-    RepositoryResult<string> Update(T entity);
-    RepositoryResult<string> Create(T entity);
-    RepositoryResult<string> Delete(T entity);
-    RepositoryResult<IEnumerable<T>> GetAll();
+    RepositoryHandler<T> GetByGuid(Guid guid);
+    RepositoryHandler<string> Update(T entity);
+    RepositoryHandler<string> Create(T entity);
+    RepositoryHandler<string> Delete(T entity);
+    RepositoryHandler<IEnumerable<T>> GetAll();
 }
