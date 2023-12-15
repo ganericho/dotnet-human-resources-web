@@ -25,7 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Migrations\" />
     <Folder Include="Properties\Model\" />
+    <Folder Include="Utilities\Sample\" />
   </ItemGroup>
 
 </Project>
